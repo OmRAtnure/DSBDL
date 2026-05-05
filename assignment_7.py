@@ -17,7 +17,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger_eng')
-nltk.download('punkt_tab')Untitled0.ipynb
+nltk.download('punkt_tab')
 
 text= "Tokenization is the first step in text analytics. The process of breaking down a text paragraph into smaller chunks such as words or sentences is called Tokenization."
 
@@ -80,9 +80,15 @@ documentB = 'Mars is the fourth planet from the Sun'
 bagOfWordsA = documentA.split(' ')
 bagOfWordsB = documentB.split(' ')
 
-bagOfWordsA = ["Jupiter", "is", "the", "largest", "Planet"]
+# bagOfWordsA = ["Jupiter", "is", "the", "largest", "Planet"]
 
-{"Jupiter", "Mars", "planet", "Sun", "largest", ...}
+# {"Jupiter", "Mars", "planet", "Sun", "largest", ...}
+
+bagOfWordsA = documentA.lower().split()
+bagOfWordsB = documentB.lower().split()
+
+# Create unique word set
+uniqueWords = set(bagOfWordsA).union(set(bagOfWordsB))
 
 numOfWordsA = dict.fromkeys(uniqueWords, 0)
 
